@@ -1,0 +1,67 @@
+<?php
+declare(strict_types=1);
+
+// Euronews SDK utility registration
+
+require_once __DIR__ . '/../core/UtilityType.php';
+require_once __DIR__ . '/Clean.php';
+require_once __DIR__ . '/Done.php';
+require_once __DIR__ . '/MakeError.php';
+require_once __DIR__ . '/FeatureAdd.php';
+require_once __DIR__ . '/FeatureHook.php';
+require_once __DIR__ . '/FeatureInit.php';
+require_once __DIR__ . '/Fetcher.php';
+require_once __DIR__ . '/MakeFetchDef.php';
+require_once __DIR__ . '/MakeContext.php';
+require_once __DIR__ . '/MakeOptions.php';
+require_once __DIR__ . '/MakeRequest.php';
+require_once __DIR__ . '/MakeResponse.php';
+require_once __DIR__ . '/MakeResult.php';
+require_once __DIR__ . '/MakePoint.php';
+require_once __DIR__ . '/MakeSpec.php';
+require_once __DIR__ . '/MakeUrl.php';
+require_once __DIR__ . '/Param.php';
+require_once __DIR__ . '/PrepareAuth.php';
+require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/PrepareHeaders.php';
+require_once __DIR__ . '/PrepareMethod.php';
+require_once __DIR__ . '/PrepareParams.php';
+require_once __DIR__ . '/PreparePath.php';
+require_once __DIR__ . '/PrepareQuery.php';
+require_once __DIR__ . '/ResultBasic.php';
+require_once __DIR__ . '/ResultBody.php';
+require_once __DIR__ . '/ResultHeaders.php';
+require_once __DIR__ . '/TransformRequest.php';
+require_once __DIR__ . '/TransformResponse.php';
+
+EuronewsUtility::setRegistrar(function (EuronewsUtility $u): void {
+    $u->clean = [EuronewsClean::class, 'call'];
+    $u->done = [EuronewsDone::class, 'call'];
+    $u->make_error = [EuronewsMakeError::class, 'call'];
+    $u->feature_add = [EuronewsFeatureAdd::class, 'call'];
+    $u->feature_hook = [EuronewsFeatureHook::class, 'call'];
+    $u->feature_init = [EuronewsFeatureInit::class, 'call'];
+    $u->fetcher = [EuronewsFetcher::class, 'call'];
+    $u->make_fetch_def = [EuronewsMakeFetchDef::class, 'call'];
+    $u->make_context = [EuronewsMakeContext::class, 'call'];
+    $u->make_options = [EuronewsMakeOptions::class, 'call'];
+    $u->make_request = [EuronewsMakeRequest::class, 'call'];
+    $u->make_response = [EuronewsMakeResponse::class, 'call'];
+    $u->make_result = [EuronewsMakeResult::class, 'call'];
+    $u->make_point = [EuronewsMakePoint::class, 'call'];
+    $u->make_spec = [EuronewsMakeSpec::class, 'call'];
+    $u->make_url = [EuronewsMakeUrl::class, 'call'];
+    $u->param = [EuronewsParam::class, 'call'];
+    $u->prepare_auth = [EuronewsPrepareAuth::class, 'call'];
+    $u->prepare_body = [EuronewsPrepareBody::class, 'call'];
+    $u->prepare_headers = [EuronewsPrepareHeaders::class, 'call'];
+    $u->prepare_method = [EuronewsPrepareMethod::class, 'call'];
+    $u->prepare_params = [EuronewsPrepareParams::class, 'call'];
+    $u->prepare_path = [EuronewsPreparePath::class, 'call'];
+    $u->prepare_query = [EuronewsPrepareQuery::class, 'call'];
+    $u->result_basic = [EuronewsResultBasic::class, 'call'];
+    $u->result_body = [EuronewsResultBody::class, 'call'];
+    $u->result_headers = [EuronewsResultHeaders::class, 'call'];
+    $u->transform_request = [EuronewsTransformRequest::class, 'call'];
+    $u->transform_response = [EuronewsTransformResponse::class, 'call'];
+});

@@ -1,0 +1,129 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Euronews API",
+    "description": "This API provides access to the latest breaking news from ru.euronews.com, allowing users to stay informed about European and world news across various topics including economy, politics, and diplomacy. It offers content in the form of free video on demand.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://github.com/l0v3m0n3y/euronews"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://ru.euronews.com/api",
+      "description": "Euronews API Server"
+    }
+  ],
+  "paths": {
+    "/breaking-news.json": {
+      "get": {
+        "summary": "Get breaking news",
+        "description": "Retrieves the latest breaking news from Euronews covering European and world news about economy, politics, diplomacy, and other topics. Content is available as free video on demand.",
+        "operationId": "getBreakingNews",
+        "tags": [
+          "News"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved breaking news",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "articles": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Unique identifier for the news article"
+                          },
+                          "title": {
+                            "type": "string",
+                            "description": "Title of the news article"
+                          },
+                          "description": {
+                            "type": "string",
+                            "description": "Brief description or summary of the article"
+                          },
+                          "url": {
+                            "type": "string",
+                            "format": "uri",
+                            "description": "URL to the full article"
+                          },
+                          "publishedAt": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "Publication date and time"
+                          },
+                          "category": {
+                            "type": "string",
+                            "description": "Category of the news (e.g., economy, politics, diplomacy)"
+                          },
+                          "videoUrl": {
+                            "type": "string",
+                            "format": "uri",
+                            "description": "URL to video content if available"
+                          },
+                          "thumbnail": {
+                            "type": "string",
+                            "format": "uri",
+                            "description": "Thumbnail image URL"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "News",
+      "description": "Operations related to news articles and breaking news"
+    }
+  ],
+  "externalDocs": {
+    "description": "API Documentation on GitHub",
+    "url": "https://github.com/l0v3m0n3y/euronews"
+  }
+}

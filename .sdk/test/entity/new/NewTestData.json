@@ -1,0 +1,49 @@
+{
+  "existing": {
+    "new": {
+      "NEW00": {
+        "category": "s50",
+        "description": "s51",
+        "id": "NEW00",
+        "published_at": "s53",
+        "thumbnail": "s54",
+        "title": "s55",
+        "url": "s56",
+        "video_url": "s57"
+      },
+      "NEW01": {
+        "category": "sa0",
+        "description": "sa1",
+        "id": "NEW01",
+        "published_at": "sa3",
+        "thumbnail": "sa4",
+        "title": "sa5",
+        "url": "sa6",
+        "video_url": "sa7"
+      },
+      "NEW02": {
+        "category": "sf0",
+        "description": "sf1",
+        "id": "NEW02",
+        "published_at": "sf3",
+        "thumbnail": "sf4",
+        "title": "sf5",
+        "url": "sf6",
+        "video_url": "sf7"
+      }
+    }
+  },
+  "new": {
+    "new": {
+      "new_ref01": {
+        "category": "s140",
+        "description": "s141",
+        "published_at": "s143",
+        "thumbnail": "s144",
+        "title": "s145",
+        "url": "s146",
+        "video_url": "s147"
+      }
+    }
+  }
+}

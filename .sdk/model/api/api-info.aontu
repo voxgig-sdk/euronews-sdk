@@ -1,0 +1,25 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      contact: {
+        url: "https://github.com/l0v3m0n3y/euronews"
+      }
+      description: "This API provides access to the latest breaking news from ru.euronews.com, allowing users to stay informed about European and world news across various topics including economy, politics, and diplomacy. It offers content in the form of free video on demand."
+      servers: [
+        {
+          description: "Euronews API Server"
+          url: "https://ru.euronews.com/api"
+        }
+      ]
+      summary: "This API provides access to the latest breaking news from ru.euronews.com, allowing users to stay informed about European and world news across various topics including economy, politics, and diplomacy."
+      title: "Euronews API"
+      version: "1.0.0"
+      website: "https://github.com/l0v3m0n3y/euronews"
+    }
+  }
+}
+
