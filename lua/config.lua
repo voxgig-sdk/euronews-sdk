@@ -47,7 +47,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "published_at",
+            ["name"] = "publishedAt",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 3,
@@ -75,7 +75,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "video_url",
+            ["name"] = "videoUrl",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 7,
@@ -90,6 +90,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/breaking-news.json",
                 ["parts"] = {
@@ -98,7 +99,7 @@ local function make_config()
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.articles`",
                 },
                 ["index$"] = 0,
               },

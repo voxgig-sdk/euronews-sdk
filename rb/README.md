@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = EuronewsSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 new = client.New.list()
 puts new
 ```
@@ -239,11 +240,11 @@ returns a result `Hash` with these keys:
 | `category` |  |
 | `description` |  |
 | `id` |  |
-| `published_at` |  |
+| `publishedAt` |  |
 | `thumbnail` |  |
 | `title` |  |
 | `url` |  |
-| `video_url` |  |
+| `videoUrl` |  |
 
 Operations: List.
 
@@ -271,11 +272,11 @@ Create an instance: `new = client.New`
 | `category` | `String` |  |
 | `description` | `String` |  |
 | `id` | `String` |  |
-| `published_at` | `String` |  |
+| `publishedAt` | `String` |  |
 | `thumbnail` | `String` |  |
 | `title` | `String` |  |
 | `url` | `String` |  |
-| `video_url` | `String` |  |
+| `videoUrl` | `String` |  |
 
 #### Example: List
 

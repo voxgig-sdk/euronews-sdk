@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'Euronews',
   }
 
 
@@ -77,7 +77,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "published_at",
+          "name": "publishedAt",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
@@ -105,7 +105,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "video_url",
+          "name": "videoUrl",
           "req": false,
           "type": "`$STRING`",
           "index$": 7
@@ -120,6 +120,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/breaking-news.json",
               "parts": [
@@ -128,7 +129,7 @@ class Config {
               "select": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.articles`"
               },
               "index$": 0
             }

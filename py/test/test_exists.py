@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Euronews SDK exists test
 
 import pytest
 from euronews_sdk import EuronewsSDK

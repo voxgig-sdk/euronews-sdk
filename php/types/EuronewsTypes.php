@@ -18,11 +18,11 @@ class New
     public ?string $category = null;
     public ?string $description = null;
     public ?string $id = null;
-    public ?string $published_at = null;
+    public ?string $publishedAt = null;
     public ?string $thumbnail = null;
     public ?string $title = null;
     public ?string $url = null;
-    public ?string $video_url = null;
+    public ?string $videoUrl = null;
 }
 
 /** Request payload for New#list. */
@@ -31,10 +31,10 @@ class NewListMatch
     public ?string $category = null;
     public ?string $description = null;
     public ?string $id = null;
-    public ?string $published_at = null;
+    public ?string $publishedAt = null;
     public ?string $thumbnail = null;
     public ?string $title = null;
     public ?string $url = null;
-    public ?string $video_url = null;
+    public ?string $videoUrl = null;
 }
 

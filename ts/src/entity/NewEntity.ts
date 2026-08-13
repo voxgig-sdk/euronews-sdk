@@ -37,7 +37,7 @@ class NewEntity extends EuronewsEntityBase<New> {
 
 
 
-  async list(this: any, reqmatch?: NewListMatch, ctrl?: Control): Promise<New[]> {
+  async list(this: any, reqmatch?: NewListMatch, ctrl?: Control): Promise<NewEntity[]> {
 
     const utility = this._utility
 

@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ EuronewsUtility.registrar = ->(u) {
   u.prepare_params = EuronewsUtilities::PrepareParams
   u.prepare_path = EuronewsUtilities::PreparePath
   u.prepare_query = EuronewsUtilities::PrepareQuery
+  u.graphql_body = EuronewsUtilities::GraphqlBody
+  u.graphql_errors = EuronewsUtilities::GraphqlErrors
   u.result_basic = EuronewsUtilities::ResultBasic
   u.result_body = EuronewsUtilities::ResultBody
   u.result_headers = EuronewsUtilities::ResultHeaders

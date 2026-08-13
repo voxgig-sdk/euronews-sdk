@@ -16,11 +16,11 @@
 import pytest
 
 from euronews_sdk import EuronewsSDK
-from core.error import EuronewsError
-from core.result import EuronewsResult
-from core.response import EuronewsResponse
-from core.spec import EuronewsSpec
-from feature.base_feature import EuronewsBaseFeature
+from euronews_sdk.core.error import EuronewsError
+from euronews_sdk.core.result import EuronewsResult
+from euronews_sdk.core.response import EuronewsResponse
+from euronews_sdk.core.spec import EuronewsSpec
+from euronews_sdk.feature.base_feature import EuronewsBaseFeature
 
 
 def _client():

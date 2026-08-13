@@ -96,11 +96,11 @@ new = client.New
 | `category` | `String` | No |  |
 | `description` | `String` | No |  |
 | `id` | `String` | No |  |
-| `published_at` | `String` | No |  |
+| `publishedAt` | `String` | No |  |
 | `thumbnail` | `String` | No |  |
 | `title` | `String` | No |  |
 | `url` | `String` | No |  |
-| `video_url` | `String` | No |  |
+| `videoUrl` | `String` | No |  |
 
 ### Operations
 

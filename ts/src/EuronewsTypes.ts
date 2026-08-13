@@ -9,21 +9,21 @@ export interface New {
   category?: string
   description?: string
   id?: string
-  published_at?: string
+  publishedAt?: string
   thumbnail?: string
   title?: string
   url?: string
-  video_url?: string
+  videoUrl?: string
 }
 
 export interface NewListMatch {
   category?: string
   description?: string
   id?: string
-  published_at?: string
+  publishedAt?: string
   thumbnail?: string
   title?: string
   url?: string
-  video_url?: string
+  videoUrl?: string
 }
 

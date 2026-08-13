@@ -119,11 +119,11 @@ const new_ = client.New()
 | `category` | `string` | No |  |
 | `description` | `string` | No |  |
 | `id` | `string` | No |  |
-| `published_at` | `string` | No |  |
+| `publishedAt` | `string` | No |  |
 | `thumbnail` | `string` | No |  |
 | `title` | `string` | No |  |
 | `url` | `string` | No |  |
-| `video_url` | `string` | No |  |
+| `videoUrl` | `string` | No |  |
 
 ### Operations
 

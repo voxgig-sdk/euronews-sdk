@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import EuronewsControl
-from core.error import EuronewsError
-from core.result import EuronewsResult
-from core.spec import EuronewsSpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import EuronewsControl
+from projectname_sdk.core.error import EuronewsError
+from projectname_sdk.core.result import EuronewsResult
+from projectname_sdk.core.spec import EuronewsSpec
 
 
 # True when this SDK was generated with the named feature.

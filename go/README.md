@@ -263,11 +263,11 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | `"category"` |  |
 | `"description"` |  |
 | `"id"` |  |
-| `"published_at"` |  |
+| `"publishedAt"` |  |
 | `"thumbnail"` |  |
 | `"title"` |  |
 | `"url"` |  |
-| `"video_url"` |  |
+| `"videoUrl"` |  |
 
 Operations: List.
 
@@ -295,11 +295,11 @@ Create an instance: `new := client.New(nil)`
 | `category` | `string` |  |
 | `description` | `string` |  |
 | `id` | `string` |  |
-| `published_at` | `string` |  |
+| `publishedAt` | `string` |  |
 | `thumbnail` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
-| `video_url` | `string` |  |
+| `videoUrl` | `string` |  |
 
 #### Example: List
 

@@ -90,11 +90,11 @@ new = client.New()
 | `category` | `str` | No |  |
 | `description` | `str` | No |  |
 | `id` | `str` | No |  |
-| `published_at` | `str` | No |  |
+| `publishedAt` | `str` | No |  |
 | `thumbnail` | `str` | No |  |
 | `title` | `str` | No |  |
 | `url` | `str` | No |  |
-| `video_url` | `str` | No |  |
+| `videoUrl` | `str` | No |  |
 
 ### Operations
 

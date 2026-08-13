@@ -53,7 +53,7 @@ class EuronewsConfig
             ],
             [
               'active' => true,
-              'name' => 'published_at',
+              'name' => 'publishedAt',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 3,
@@ -81,7 +81,7 @@ class EuronewsConfig
             ],
             [
               'active' => true,
-              'name' => 'video_url',
+              'name' => 'videoUrl',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 7,
@@ -96,6 +96,7 @@ class EuronewsConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/breaking-news.json',
                   'parts' => [
@@ -104,7 +105,7 @@ class EuronewsConfig
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.articles`',
                   ],
                   'index$' => 0,
                 ],

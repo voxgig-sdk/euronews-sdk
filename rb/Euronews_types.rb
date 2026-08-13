@@ -19,7 +19,7 @@
 # @!attribute [rw] id
 #   @return [String, nil]
 #
-# @!attribute [rw] published_at
+# @!attribute [rw] publishedAt
 #   @return [String, nil]
 #
 # @!attribute [rw] thumbnail
@@ -31,17 +31,17 @@
 # @!attribute [rw] url
 #   @return [String, nil]
 #
-# @!attribute [rw] video_url
+# @!attribute [rw] videoUrl
 #   @return [String, nil]
 New = Struct.new(
   :category,
   :description,
   :id,
-  :published_at,
+  :publishedAt,
   :thumbnail,
   :title,
   :url,
-  :video_url,
+  :videoUrl,
   keyword_init: true
 )
 
@@ -56,7 +56,7 @@ New = Struct.new(
 # @!attribute [rw] id
 #   @return [String, nil]
 #
-# @!attribute [rw] published_at
+# @!attribute [rw] publishedAt
 #   @return [String, nil]
 #
 # @!attribute [rw] thumbnail
@@ -68,17 +68,17 @@ New = Struct.new(
 # @!attribute [rw] url
 #   @return [String, nil]
 #
-# @!attribute [rw] video_url
+# @!attribute [rw] videoUrl
 #   @return [String, nil]
 NewListMatch = Struct.new(
   :category,
   :description,
   :id,
-  :published_at,
+  :publishedAt,
   :thumbnail,
   :title,
   :url,
-  :video_url,
+  :videoUrl,
   keyword_init: true
 )
 

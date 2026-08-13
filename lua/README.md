@@ -218,9 +218,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local new, err = client:New():load()
+    local new, err = client:New():list()
     if err then error(err) end
-    -- new is the loaded record
+    -- new is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -234,11 +234,11 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | `category` |  |
 | `description` |  |
 | `id` |  |
-| `published_at` |  |
+| `publishedAt` |  |
 | `thumbnail` |  |
 | `title` |  |
 | `url` |  |
-| `video_url` |  |
+| `videoUrl` |  |
 
 Operations: List.
 
@@ -266,11 +266,11 @@ Create an instance: `local new = client:New(nil)`
 | `category` | `string` |  |
 | `description` | `string` |  |
 | `id` | `string` |  |
-| `published_at` | `string` |  |
+| `publishedAt` | `string` |  |
 | `thumbnail` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
-| `video_url` | `string` |  |
+| `videoUrl` | `string` |  |
 
 #### Example: List
 

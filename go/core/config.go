@@ -47,7 +47,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "published_at",
+						"name": "publishedAt",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 3,
@@ -75,7 +75,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "video_url",
+						"name": "videoUrl",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 7,
@@ -90,6 +90,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/breaking-news.json",
 								"parts": []any{
@@ -98,12 +99,11 @@ func MakeConfig() map[string]any {
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.articles`",
 								},
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{

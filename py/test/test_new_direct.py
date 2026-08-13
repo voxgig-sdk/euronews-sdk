@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from euronews_sdk.utility.voxgig_struct import voxgig_struct as vs
 from euronews_sdk import EuronewsSDK
-from core import helpers
+from euronews_sdk.core import helpers
 from test import runner
 
 

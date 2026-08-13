@@ -35,7 +35,9 @@ const client = new EuronewsSDK()
 
 ### 2. List new records
 
-`list()` resolves to an array of New objects — iterate it directly:
+`list()` resolves to an array of New ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const new_s = await client.New().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = EuronewsSDK.test()
 
 const new_ = await client.New().list()
-// new_ is a bare entity populated with mock response data
+// new_ is the entity, populated with mock response data
+// — call new_.data() for the record itself
 console.log(new_)
 ```
 
@@ -287,11 +290,11 @@ The `prepare()` method returns:
 | `category` |  |
 | `description` |  |
 | `id` |  |
-| `published_at` |  |
+| `publishedAt` |  |
 | `thumbnail` |  |
 | `title` |  |
 | `url` |  |
-| `video_url` |  |
+| `videoUrl` |  |
 
 Operations: list.
 
@@ -319,11 +322,11 @@ Create an instance: `const new_ = client.New()`
 | `category` | `string` |  |
 | `description` | `string` |  |
 | `id` | `string` |  |
-| `published_at` | `string` |  |
+| `publishedAt` | `string` |  |
 | `thumbnail` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
-| `video_url` | `string` |  |
+| `videoUrl` | `string` |  |
 
 #### Example: List
 

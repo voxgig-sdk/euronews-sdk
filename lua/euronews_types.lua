@@ -10,21 +10,21 @@
 ---@field category? string
 ---@field description? string
 ---@field id? string
----@field published_at? string
+---@field publishedAt? string
 ---@field thumbnail? string
 ---@field title? string
 ---@field url? string
----@field video_url? string
+---@field videoUrl? string
 
 ---@class NewListMatch
 ---@field category? string
 ---@field description? string
 ---@field id? string
----@field published_at? string
+---@field publishedAt? string
 ---@field thumbnail? string
 ---@field title? string
 ---@field url? string
----@field video_url? string
+---@field videoUrl? string
 
 local M = {}
 
