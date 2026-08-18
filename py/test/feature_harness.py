@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from euronews_sdk.config import make_config
+from euronews_sdk.config import shared_config
 from euronews_sdk.features import _make_feature
 from euronews_sdk.core.control import EuronewsControl
 from euronews_sdk.core.error import EuronewsError
@@ -24,7 +24,7 @@ from euronews_sdk.core.spec import EuronewsSpec
 
 # True when this SDK was generated with the named feature.
 def has_feature(name):
-    feature = make_config().get("feature")
+    feature = shared_config().get("feature")
     return isinstance(feature, dict) and feature.get(name) is not None
 
 

@@ -28,7 +28,7 @@ class EuronewsSDK
     utility = EuronewsUtility.new
     @_utility = utility
 
-    config = EuronewsConfig.make_config
+    config = EuronewsConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

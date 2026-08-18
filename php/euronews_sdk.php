@@ -40,7 +40,7 @@ class EuronewsSDK
         $utility = new EuronewsUtility();
         $this->_utility = $utility;
 
-        $config = EuronewsConfig::make_config();
+        $config = EuronewsConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,
