@@ -116,14 +116,14 @@ const new_ = client.New()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `string` | No |  |
-| `description` | `string` | No |  |
-| `id` | `string` | No |  |
-| `publishedAt` | `string` | No |  |
-| `thumbnail` | `string` | No |  |
-| `title` | `string` | No |  |
-| `url` | `string` | No |  |
-| `videoUrl` | `string` | No |  |
+| `category` | `string` | No | Category of the news (e.g., economy, politics, diplomacy) |
+| `description` | `string` | No | Brief description or summary of the article |
+| `id` | `string` | No | Unique identifier for the news article |
+| `publishedAt` | `string` | No | Publication date and time |
+| `thumbnail` | `string` | No | Thumbnail image URL |
+| `title` | `string` | No | Title of the news article |
+| `url` | `string` | No | URL to the full article |
+| `videoUrl` | `string` | No | URL to video content if available |
 
 ### Operations
 

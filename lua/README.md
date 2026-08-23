@@ -231,14 +231,14 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `category` |  |
-| `description` |  |
-| `id` |  |
-| `publishedAt` |  |
-| `thumbnail` |  |
-| `title` |  |
-| `url` |  |
-| `videoUrl` |  |
+| `category` | Category of the news (e.g., economy, politics, diplomacy) |
+| `description` | Brief description or summary of the article |
+| `id` | Unique identifier for the news article |
+| `publishedAt` | Publication date and time |
+| `thumbnail` | Thumbnail image URL |
+| `title` | Title of the news article |
+| `url` | URL to the full article |
+| `videoUrl` | URL to video content if available |
 
 Operations: List.
 
@@ -263,14 +263,14 @@ Create an instance: `local new = client:New(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `description` | `string` |  |
-| `id` | `string` |  |
-| `publishedAt` | `string` |  |
-| `thumbnail` | `string` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
-| `videoUrl` | `string` |  |
+| `category` | `string` | Category of the news (e.g., economy, politics, diplomacy) |
+| `description` | `string` | Brief description or summary of the article |
+| `id` | `string` | Unique identifier for the news article |
+| `publishedAt` | `string` | Publication date and time |
+| `thumbnail` | `string` | Thumbnail image URL |
+| `title` | `string` | Title of the news article |
+| `url` | `string` | URL to the full article |
+| `videoUrl` | `string` | URL to video content if available |
 
 #### Example: List
 

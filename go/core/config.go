@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "Euronews",
+			"slug": "euronews",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,34 +36,42 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "category",
+						"short": "Category of the news (e.g., economy, politics, diplomacy)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "description",
+						"short": "Brief description or summary of the article",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the news article",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "publishedAt",
+						"short": "Publication date and time",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "thumbnail",
+						"short": "Thumbnail image URL",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "title",
+						"short": "Title of the news article",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "url",
+						"short": "URL to the full article",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "videoUrl",
+						"short": "URL to video content if available",
 						"type": "`$STRING`",
 					},
 				},

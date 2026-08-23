@@ -6,7 +6,7 @@ The Golang SDK for the Euronews API — an entity-oriented client using standard
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.New(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -260,14 +260,14 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"category"` |  |
-| `"description"` |  |
-| `"id"` |  |
-| `"publishedAt"` |  |
-| `"thumbnail"` |  |
-| `"title"` |  |
-| `"url"` |  |
-| `"videoUrl"` |  |
+| `"category"` | Category of the news (e.g., economy, politics, diplomacy) |
+| `"description"` | Brief description or summary of the article |
+| `"id"` | Unique identifier for the news article |
+| `"publishedAt"` | Publication date and time |
+| `"thumbnail"` | Thumbnail image URL |
+| `"title"` | Title of the news article |
+| `"url"` | URL to the full article |
+| `"videoUrl"` | URL to video content if available |
 
 Operations: List.
 
@@ -292,14 +292,14 @@ Create an instance: `new := client.New(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `description` | `string` |  |
-| `id` | `string` |  |
-| `publishedAt` | `string` |  |
-| `thumbnail` | `string` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
-| `videoUrl` | `string` |  |
+| `category` | `string` | Category of the news (e.g., economy, politics, diplomacy) |
+| `description` | `string` | Brief description or summary of the article |
+| `id` | `string` | Unique identifier for the news article |
+| `publishedAt` | `string` | Publication date and time |
+| `thumbnail` | `string` | Thumbnail image URL |
+| `title` | `string` | Title of the news article |
+| `url` | `string` | URL to the full article |
+| `videoUrl` | `string` | URL to video content if available |
 
 #### Example: List
 

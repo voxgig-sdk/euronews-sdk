@@ -237,14 +237,14 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `category` |  |
-| `description` |  |
-| `id` |  |
-| `publishedAt` |  |
-| `thumbnail` |  |
-| `title` |  |
-| `url` |  |
-| `videoUrl` |  |
+| `category` | Category of the news (e.g., economy, politics, diplomacy) |
+| `description` | Brief description or summary of the article |
+| `id` | Unique identifier for the news article |
+| `publishedAt` | Publication date and time |
+| `thumbnail` | Thumbnail image URL |
+| `title` | Title of the news article |
+| `url` | URL to the full article |
+| `videoUrl` | URL to video content if available |
 
 Operations: List.
 
@@ -269,14 +269,14 @@ Create an instance: `new = client.New`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `String` |  |
-| `description` | `String` |  |
-| `id` | `String` |  |
-| `publishedAt` | `String` |  |
-| `thumbnail` | `String` |  |
-| `title` | `String` |  |
-| `url` | `String` |  |
-| `videoUrl` | `String` |  |
+| `category` | `String` | Category of the news (e.g., economy, politics, diplomacy) |
+| `description` | `String` | Brief description or summary of the article |
+| `id` | `String` | Unique identifier for the news article |
+| `publishedAt` | `String` | Publication date and time |
+| `thumbnail` | `String` | Thumbnail image URL |
+| `title` | `String` | Title of the news article |
+| `url` | `String` | URL to the full article |
+| `videoUrl` | `String` | URL to video content if available |
 
 #### Example: List
 

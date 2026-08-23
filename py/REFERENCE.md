@@ -87,14 +87,14 @@ new = client.New()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `category` | `str` | No |  |
-| `description` | `str` | No |  |
-| `id` | `str` | No |  |
-| `publishedAt` | `str` | No |  |
-| `thumbnail` | `str` | No |  |
-| `title` | `str` | No |  |
-| `url` | `str` | No |  |
-| `videoUrl` | `str` | No |  |
+| `category` | `str` | No | Category of the news (e.g., economy, politics, diplomacy) |
+| `description` | `str` | No | Brief description or summary of the article |
+| `id` | `str` | No | Unique identifier for the news article |
+| `publishedAt` | `str` | No | Publication date and time |
+| `thumbnail` | `str` | No | Thumbnail image URL |
+| `title` | `str` | No | Title of the news article |
+| `url` | `str` | No | URL to the full article |
+| `videoUrl` | `str` | No | URL to video content if available |
 
 ### Operations
 

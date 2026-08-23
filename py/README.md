@@ -243,14 +243,14 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `category` |  |
-| `description` |  |
-| `id` |  |
-| `publishedAt` |  |
-| `thumbnail` |  |
-| `title` |  |
-| `url` |  |
-| `videoUrl` |  |
+| `category` | Category of the news (e.g., economy, politics, diplomacy) |
+| `description` | Brief description or summary of the article |
+| `id` | Unique identifier for the news article |
+| `publishedAt` | Publication date and time |
+| `thumbnail` | Thumbnail image URL |
+| `title` | Title of the news article |
+| `url` | URL to the full article |
+| `videoUrl` | URL to video content if available |
 
 Operations: List.
 
@@ -275,14 +275,14 @@ Create an instance: `new = client.New()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `str` |  |
-| `description` | `str` |  |
-| `id` | `str` |  |
-| `publishedAt` | `str` |  |
-| `thumbnail` | `str` |  |
-| `title` | `str` |  |
-| `url` | `str` |  |
-| `videoUrl` | `str` |  |
+| `category` | `str` | Category of the news (e.g., economy, politics, diplomacy) |
+| `description` | `str` | Brief description or summary of the article |
+| `id` | `str` | Unique identifier for the news article |
+| `publishedAt` | `str` | Publication date and time |
+| `thumbnail` | `str` | Thumbnail image URL |
+| `title` | `str` | Title of the news article |
+| `url` | `str` | URL to the full article |
+| `videoUrl` | `str` | URL to video content if available |
 
 #### Example: List
 

@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -287,14 +287,14 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `category` |  |
-| `description` |  |
-| `id` |  |
-| `publishedAt` |  |
-| `thumbnail` |  |
-| `title` |  |
-| `url` |  |
-| `videoUrl` |  |
+| `category` | Category of the news (e.g., economy, politics, diplomacy) |
+| `description` | Brief description or summary of the article |
+| `id` | Unique identifier for the news article |
+| `publishedAt` | Publication date and time |
+| `thumbnail` | Thumbnail image URL |
+| `title` | Title of the news article |
+| `url` | URL to the full article |
+| `videoUrl` | URL to video content if available |
 
 Operations: list.
 
@@ -319,14 +319,14 @@ Create an instance: `const new_ = client.New()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `category` | `string` |  |
-| `description` | `string` |  |
-| `id` | `string` |  |
-| `publishedAt` | `string` |  |
-| `thumbnail` | `string` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
-| `videoUrl` | `string` |  |
+| `category` | `string` | Category of the news (e.g., economy, politics, diplomacy) |
+| `description` | `string` | Brief description or summary of the article |
+| `id` | `string` | Unique identifier for the news article |
+| `publishedAt` | `string` | Publication date and time |
+| `thumbnail` | `string` | Thumbnail image URL |
+| `title` | `string` | Title of the news article |
+| `url` | `string` | URL to the full article |
+| `videoUrl` | `string` | URL to video content if available |
 
 #### Example: List
 

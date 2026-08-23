@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'Euronews',
+        slug: "euronews",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -56,34 +67,42 @@ class Config {
       "fields": [
         {
           "name": "category",
+          "short": "Category of the news (e.g., economy, politics, diplomacy)",
           "type": "`$STRING`"
         },
         {
           "name": "description",
+          "short": "Brief description or summary of the article",
           "type": "`$STRING`"
         },
         {
           "name": "id",
+          "short": "Unique identifier for the news article",
           "type": "`$STRING`"
         },
         {
           "name": "publishedAt",
+          "short": "Publication date and time",
           "type": "`$STRING`"
         },
         {
           "name": "thumbnail",
+          "short": "Thumbnail image URL",
           "type": "`$STRING`"
         },
         {
           "name": "title",
+          "short": "Title of the news article",
           "type": "`$STRING`"
         },
         {
           "name": "url",
+          "short": "URL to the full article",
           "type": "`$STRING`"
         },
         {
           "name": "videoUrl",
+          "short": "URL to video content if available",
           "type": "`$STRING`"
         }
       ],
