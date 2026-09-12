@@ -10,6 +10,17 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
+// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
+// the model's active plugin groups. A feature that takes a `plugins` option
+// (secrets over sekreto) reads its own entry; a feature with no plugins has
+// none. Named imports above make each definition statically reachable, so
+// an SDK carries exactly the plugin modules its model selects — the same
+// leanness the old side-effect registry imports bought, without a registry.
+const FEATURE_PLUGINS: Record<string, any[]> = {
+  
+}
+
+
 class Config {
 
   makeFeature(this: any, fn: string) {
@@ -82,11 +93,13 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "publishedAt",
           "short": "Publication date and time",
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "thumbnail",
           "short": "Thumbnail image URL",
           "type": "`$STRING`"
@@ -97,16 +110,22 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "url",
           "short": "URL to the full article",
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "videoUrl",
           "short": "URL to video content if available",
           "type": "`$STRING`"
         }
       ],
+      "id": {
+        "field": "id",
+        "name": "id"
+      },
       "name": "new",
       "op": {
         "list": {
@@ -118,14 +137,19 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/breaking-news.json",
-              "parts": [
-                "breaking-news.json"
+              "segments": [
+                {
+                  "lit": "breaking-news.json"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.articles`"
-              }
+              },
+              "parts": [
+                "breaking-news.json"
+              ]
             }
           ]
         }
@@ -141,6 +165,7 @@ class Config {
 const config = new Config()
 
 export {
-  config
+  config,
+  FEATURE_PLUGINS,
 }
 

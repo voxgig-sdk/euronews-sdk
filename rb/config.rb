@@ -59,11 +59,13 @@ module EuronewsConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "date-time",
               "name" => "publishedAt",
               "short" => "Publication date and time",
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "thumbnail",
               "short" => "Thumbnail image URL",
               "type" => "`$STRING`",
@@ -74,16 +76,22 @@ module EuronewsConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "url",
               "short" => "URL to the full article",
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "videoUrl",
               "short" => "URL to video content if available",
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "new",
           "op" => {
             "list" => {
@@ -95,14 +103,19 @@ module EuronewsConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/breaking-news.json",
-                  "parts" => [
-                    "breaking-news.json",
+                  "segments" => [
+                    {
+                      "lit" => "breaking-news.json",
+                    },
                   ],
                   "select" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body.articles`",
                   },
+                  "parts" => [
+                    "breaking-news.json",
+                  ],
                 },
               ],
             },

@@ -24,12 +24,14 @@ main: kit: entity: new: {
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "publishedAt"
       req: false
       short: "Publication date and time"
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "thumbnail"
       req: false
       short: "Thumbnail image URL"
@@ -42,12 +44,14 @@ main: kit: entity: new: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "url"
       req: false
       short: "URL to the full article"
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "videoUrl"
       req: false
       short: "URL to video content if available"
@@ -68,8 +72,10 @@ main: kit: entity: new: {
         {
           method: "GET"
           orig: "/breaking-news.json"
-          parts: [
-            "breaking-news.json"
+          segments: [
+            {
+              lit: "breaking-news.json"
+            }
           ]
           transform: {
             req: "`reqdata`"
