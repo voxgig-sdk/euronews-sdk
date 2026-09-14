@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { EuronewsSDK } from '@voxgig-sdk/euronews'
+import { EuronewsSDK } from '@voxgig-sdk/euronews-sdk'
 
 const client = new EuronewsSDK()
 ```
@@ -417,7 +417,7 @@ euronews/
 Import the SDK from the package root:
 
 ```ts
-import { EuronewsSDK } from '@voxgig-sdk/euronews'
+import { EuronewsSDK } from '@voxgig-sdk/euronews-sdk'
 ```
 
 ### Entity state

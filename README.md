@@ -105,7 +105,7 @@ local results, err = client:New():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/euronews` | publish pending — [install from git tag](https://github.com/voxgig-sdk/euronews-sdk/releases) |
+| TypeScript | `@voxgig-sdk/euronews-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/euronews-sdk/releases) |
 | Python | `voxgig-sdk-euronews` | publish pending — [install from git tag](https://github.com/voxgig-sdk/euronews-sdk/releases) |
 | PHP | `voxgig-sdk/euronews` | publish pending — [install from git tag](https://github.com/voxgig-sdk/euronews-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/euronews-sdk/go` | `go get github.com/voxgig-sdk/euronews-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:New():list()
 ### TypeScript
 
 ```ts
-import { EuronewsSDK } from '@voxgig-sdk/euronews'
+import { EuronewsSDK } from '@voxgig-sdk/euronews-sdk'
 
 const client = new EuronewsSDK()
 
