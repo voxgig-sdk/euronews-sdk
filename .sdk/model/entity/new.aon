@@ -70,6 +70,12 @@ main: kit: entity: new: {
       name: "list"
       points: [
         {
+          contract: {
+            id: "GET /breaking-news.json"
+            json: "{\"operationId\":\"getBreakingNews\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"articles\":{\"items\":{\"properties\":{\"category\":{\"description\":\"Category of the news (e.g., economy, politics, diplomacy)\",\"type\":\"string\"},\"description\":{\"description\":\"Brief description or summary of the article\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the news article\",\"type\":\"string\"},\"publishedAt\":{\"description\":\"Publication date and time\",\"format\":\"date-time\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"title\":{\"description\":\"Title of the news article\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the full article\",\"format\":\"uri\",\"type\":\"string\"},\"videoUrl\":{\"description\":\"URL to video content if available\",\"format\":\"uri\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successfully retrieved breaking news\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/breaking-news.json"
           segments: [

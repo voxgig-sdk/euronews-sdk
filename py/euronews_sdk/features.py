@@ -1,12 +1,18 @@
 # Euronews SDK feature factory
 
 from euronews_sdk.feature.base_feature import EuronewsBaseFeature
+from euronews_sdk.feature.ratelimit_feature import EuronewsRatelimitFeature
+from euronews_sdk.feature.retry_feature import EuronewsRetryFeature
 from euronews_sdk.feature.test_feature import EuronewsTestFeature
+from euronews_sdk.feature.timeout_feature import EuronewsTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: EuronewsBaseFeature(),
+    "ratelimit": lambda: EuronewsRatelimitFeature(),
+    "retry": lambda: EuronewsRetryFeature(),
     "test": lambda: EuronewsTestFeature(),
+    "timeout": lambda: EuronewsTimeoutFeature(),
 }
 
 
