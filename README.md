@@ -105,12 +105,12 @@ local results, err = client:New():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/euronews-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/euronews-sdk/releases) |
-| Python | `voxgig-sdk-euronews` | publish pending — [install from git tag](https://github.com/voxgig-sdk/euronews-sdk/releases) |
-| PHP | `voxgig-sdk/euronews` | publish pending — [install from git tag](https://github.com/voxgig-sdk/euronews-sdk/releases) |
+| TypeScript | `@voxgig-sdk/euronews-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/euronews-sdk/tags) |
+| Python | `voxgig-sdk-euronews` | publish pending — [install from git tag](https://github.com/voxgig-sdk/euronews-sdk/tags) |
+| PHP | `voxgig-sdk/euronews` | publish pending — [install from git tag](https://github.com/voxgig-sdk/euronews-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/euronews-sdk/go` | `go get github.com/voxgig-sdk/euronews-sdk/go@latest` |
-| Ruby | `voxgig-sdk-euronews` | publish pending — [install from git tag](https://github.com/voxgig-sdk/euronews-sdk/releases) |
-| Lua | `voxgig-sdk-euronews` | publish pending — [install from git tag](https://github.com/voxgig-sdk/euronews-sdk/releases) |
+| Ruby | `voxgig-sdk-euronews` | publish pending — [install from git tag](https://github.com/voxgig-sdk/euronews-sdk/tags) |
+| Lua | `voxgig-sdk-euronews` | publish pending — [install from git tag](https://github.com/voxgig-sdk/euronews-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/euronews-sdk/go-cli` | `go install github.com/voxgig-sdk/euronews-sdk/go-cli/cmd/euronews@latest` |
 | Go MCP server | `github.com/voxgig-sdk/euronews-sdk/go-mcp` | `go get github.com/voxgig-sdk/euronews-sdk/go-mcp@latest` |
 
