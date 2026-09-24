@@ -19,7 +19,6 @@ import type {
   NewListMatch,
 } from '../EuronewsTypes'
 
-// TODO: needs Entity superclass
 class NewEntity extends EuronewsEntityBase<New> {
 
   constructor(client: EuronewsSDK, entopts: any) {

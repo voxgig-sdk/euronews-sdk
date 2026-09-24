@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NewEntity = void 0;
 const EuronewsEntityBase_1 = require("../EuronewsEntityBase");
-// TODO: needs Entity superclass
 class NewEntity extends EuronewsEntityBase_1.EuronewsEntityBase {
     constructor(client, entopts) {
         super(client, entopts);

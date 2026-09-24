@@ -11,19 +11,12 @@ const FEATURE_CLASS = {
     test: TestFeature_1.TestFeature,
     timeout: TimeoutFeature_1.TimeoutFeature,
 };
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS = {};
 exports.FEATURE_PLUGINS = FEATURE_PLUGINS;
 class Config {
     makeFeature(fn) {
         const fc = FEATURE_CLASS[fn];
         const fi = new fc();
-        // TODO: errors etc
         return fi;
     }
     // False for a feature added at runtime via options.extend (station's
@@ -114,47 +107,55 @@ class Config {
             "fields": [
                 {
                     "name": "category",
-                    "short": "Category of the news (e.g., economy, politics, diplomacy)",
-                    "type": "`$STRING`"
+                    "title": "Category",
+                    "type": "`$STRING`",
+                    "short": "Category of the news (e.g., economy, politics, diplomacy)"
                 },
                 {
                     "name": "description",
-                    "short": "Brief description or summary of the article",
-                    "type": "`$STRING`"
+                    "title": "Description",
+                    "type": "`$STRING`",
+                    "short": "Brief description or summary of the article"
                 },
                 {
                     "name": "id",
-                    "short": "Unique identifier for the news article",
-                    "type": "`$STRING`"
+                    "title": "Id",
+                    "type": "`$STRING`",
+                    "short": "Unique identifier for the news article"
                 },
                 {
-                    "format": "date-time",
                     "name": "publishedAt",
+                    "title": "Published At",
+                    "type": "`$STRING`",
                     "short": "Publication date and time",
-                    "type": "`$STRING`"
+                    "format": "date-time"
                 },
                 {
-                    "format": "uri",
                     "name": "thumbnail",
+                    "title": "Thumbnail",
+                    "type": "`$STRING`",
                     "short": "Thumbnail image URL",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 },
                 {
                     "name": "title",
-                    "short": "Title of the news article",
-                    "type": "`$STRING`"
+                    "title": "Title",
+                    "type": "`$STRING`",
+                    "short": "Title of the news article"
                 },
                 {
-                    "format": "uri",
                     "name": "url",
+                    "title": "Url",
+                    "type": "`$STRING`",
                     "short": "URL to the full article",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 },
                 {
-                    "format": "uri",
                     "name": "videoUrl",
+                    "title": "Video Url",
+                    "type": "`$STRING`",
                     "short": "URL to video content if available",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 }
             ],
             "id": {
@@ -168,7 +169,6 @@ class Config {
                     "name": "list",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "GET",
                             "orig": "/breaking-news.json",
@@ -177,14 +177,16 @@ class Config {
                                     "lit": "breaking-news.json"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "breaking-news.json"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body.articles`"
                             },
-                            "parts": [
-                                "breaking-news.json"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }

@@ -1,0 +1,104 @@
+# Entity: new
+
+main: kit: entity: new: {
+
+  alias: field: {}
+
+  fields: {
+    category: {
+      h: "Category"
+      n: "category"
+      r: false
+      sh: "Category of the news (e.g., economy, politics, diplomacy)"
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "Brief description or summary of the article"
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      sh: "Unique identifier for the news article"
+      t: "`$STRING`"
+    }
+    publishedAt: {
+      fo: "date-time"
+      h: "Published At"
+      n: "publishedAt"
+      r: false
+      sh: "Publication date and time"
+      t: "`$STRING`"
+    }
+    thumbnail: {
+      fo: "uri"
+      h: "Thumbnail"
+      n: "thumbnail"
+      r: false
+      sh: "Thumbnail image URL"
+      t: "`$STRING`"
+    }
+    title: {
+      h: "Title"
+      n: "title"
+      r: false
+      sh: "Title of the news article"
+      t: "`$STRING`"
+    }
+    url: {
+      fo: "uri"
+      h: "Url"
+      n: "url"
+      r: false
+      sh: "URL to the full article"
+      t: "`$STRING`"
+    }
+    videoUrl: {
+      fo: "uri"
+      h: "Video Url"
+      n: "videoUrl"
+      r: false
+      sh: "URL to video content if available"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "new"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /breaking-news.json"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/breaking-news.json"
+          s: [
+            {
+              lit: "breaking-news.json"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.articles`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

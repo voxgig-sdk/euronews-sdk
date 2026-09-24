@@ -1,7 +1,7 @@
 // Typed models for the Euronews SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,14 +14,6 @@ import (
 
 // New is the typed data model for the new entity.
 type New struct {
-	Category *string `json:"category,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Id *string `json:"id,omitempty"`
-	PublishedAt *string `json:"publishedAt,omitempty"`
-	Thumbnail *string `json:"thumbnail,omitempty"`
-	Title *string `json:"title,omitempty"`
-	Url *string `json:"url,omitempty"`
-	VideoUrl *string `json:"videoUrl,omitempty"`
 }
 
 // NewListMatch is the typed request payload for New.ListTyped.
