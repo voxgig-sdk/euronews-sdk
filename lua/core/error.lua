@@ -1,7 +1,13 @@
 -- Euronews SDK error
 
+local json = require("dkjson")
+
 local EuronewsError = {}
 EuronewsError.__index = EuronewsError
+
+-- Reachable for a debugger, absent from the table itself: the context holds
+-- the live spec and options, and an error is what gets dumped or encoded.
+local CONTEXT = setmetatable({}, { __mode = "k" })
 
 
 function EuronewsError.new(code, msg, ctx)
@@ -10,10 +16,15 @@ function EuronewsError.new(code, msg, ctx)
   self.sdk = "Euronews"
   self.code = code or ""
   self.msg = msg or ""
-  self.ctx = ctx
   self.result = nil
   self.spec = nil
+  CONTEXT[self] = ctx
   return self
+end
+
+
+function EuronewsError:context()
+  return CONTEXT[self]
 end
 
 
@@ -22,8 +33,32 @@ function EuronewsError:error()
 end
 
 
+-- What make_error attached is already cleaned; the context is not part of
+-- the record.
+function EuronewsError:to_table()
+  return {
+    sdk = self.sdk,
+    code = self.code,
+    msg = self.msg,
+    status = self.status,
+    result = self.result,
+    spec = self.spec,
+  }
+end
+
+
+function EuronewsError:to_json()
+  return json.encode(self:to_table())
+end
+
+
 function EuronewsError:__tostring()
   return self.msg
+end
+
+
+function EuronewsError.__tojson(self)
+  return self:to_json()
 end
 
 

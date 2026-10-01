@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 EuronewsUtility.registrar = ->(u) {
   u.clean = EuronewsUtilities::Clean
+  u.clean_add = EuronewsUtilities::CleanAdd
+  u.clean_explain = EuronewsUtilities::CleanExplain
   u.done = EuronewsUtilities::Done
   u.make_error = EuronewsUtilities::MakeError
   u.feature_add = EuronewsUtilities::FeatureAdd

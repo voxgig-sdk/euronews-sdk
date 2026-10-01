@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 EuronewsUtility::setRegistrar(function (EuronewsUtility $u): void {
     $u->clean = [EuronewsClean::class, 'call'];
+    $u->clean_add = [EuronewsClean::class, 'add'];
+    $u->clean_explain = [EuronewsDone::class, 'clean_explain'];
     $u->done = [EuronewsDone::class, 'call'];
     $u->make_error = [EuronewsMakeError::class, 'call'];
     $u->feature_add = [EuronewsFeatureAdd::class, 'call'];
