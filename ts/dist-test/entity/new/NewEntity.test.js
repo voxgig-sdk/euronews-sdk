@@ -54,6 +54,53 @@ const utility_1 = require("../../utility");
         const ent = testsdk.New();
         (0, node_assert_1.default)(null != ent);
     });
+    class FailHook extends __1.BaseFeature {
+        name = 'failhook';
+        version = '0.0.1';
+        active = true;
+        unexpected = 0;
+        init() { }
+        PreSpec() { throw new Error('new hook failed'); }
+        PreUnexpected() { this.unexpected++; }
+    }
+    (0, node_test_1.test)('stream-error', async () => {
+        const offline = { net: { offline: true } };
+        await node_assert_1.default.rejects(async () => {
+            for await (const _item of __1.EuronewsSDK.test(offline).New().stream('list')) { }
+        }, /offline/);
+        for await (const _item of __1.EuronewsSDK.test(offline).New()
+            .stream('list', undefined, { ctrl: { throw: false } })) { }
+        if (null != __1.config.feature?.rbac) {
+            const denied = __1.EuronewsSDK.test(undefined, { feature: { rbac: { active: true, deny: true } } });
+            await node_assert_1.default.rejects(async () => {
+                for await (const _item of denied.New().stream('list')) { }
+            }, (err) => 'rbac_denied' === err.code);
+        }
+    });
+    (0, node_test_1.test)('stream-ctrl', async () => {
+        const explain = {};
+        const ctrl = { explain };
+        for await (const _item of __1.EuronewsSDK.test().New().stream('list', undefined, { ctrl })) { }
+        node_assert_1.default.deepStrictEqual(Object.keys(ctrl), ['explain']);
+        (0, node_assert_1.default)(explain === ctrl.explain && 0 < Object.keys(explain).length);
+    });
+    (0, node_test_1.test)('unexpected', async () => {
+        const hook = new FailHook();
+        const client = new __1.EuronewsSDK({ feature: { test: { active: true } }, extend: [hook] });
+        await node_assert_1.default.rejects(client.New().list(), /hook failed/);
+        (0, node_assert_1.default)(0 < hook.unexpected);
+        const fired = hook.unexpected;
+        node_assert_1.default.strictEqual(await client.New().list(undefined, { throw: false }), undefined);
+        (0, node_assert_1.default)(fired < hook.unexpected);
+    });
+    (0, node_test_1.test)('validate', async (t) => {
+        if (null == __1.config.feature?.validate) {
+            t.skip('feature not present in this SDK: validate');
+            return;
+        }
+        const client = __1.EuronewsSDK.test(undefined, { feature: { validate: { active: true } } });
+        await node_assert_1.default.rejects(client.New().list({ "category": 1 }), (err) => 'validate_failed' === err.code);
+    });
     (0, node_test_1.test)('basic', async (t) => {
         const live = 'TRUE' === process.env.EURONEWS_TEST_LIVE;
         for (const op of ['list']) {
@@ -62,7 +109,7 @@ const utility_1 = require("../../utility");
         }
         const setup = basicSetup();
         if (setup.live) {
-            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": { "category": { "a": true, "h": "Category", "n": "category", "r": false, "sh": "Category of the news (e.g., economy, politics, diplomacy)", "t": "`$STRING`", "key$": "category", "index$": 0 }, "description": { "a": true, "h": "Description", "n": "description", "r": false, "sh": "Brief description or summary of the article", "t": "`$STRING`", "key$": "description", "index$": 1 }, "id": { "a": true, "h": "Id", "n": "id", "r": false, "sh": "Unique identifier for the news article", "t": "`$STRING`", "key$": "id", "index$": 2 }, "publishedAt": { "a": true, "fo": "date-time", "h": "Published At", "n": "publishedAt", "r": false, "sh": "Publication date and time", "t": "`$STRING`", "key$": "publishedAt", "index$": 3 }, "thumbnail": { "a": true, "fo": "uri", "h": "Thumbnail", "n": "thumbnail", "r": false, "sh": "Thumbnail image URL", "t": "`$STRING`", "key$": "thumbnail", "index$": 4 }, "title": { "a": true, "h": "Title", "n": "title", "r": false, "sh": "Title of the news article", "t": "`$STRING`", "key$": "title", "index$": 5 }, "url": { "a": true, "fo": "uri", "h": "Url", "n": "url", "r": false, "sh": "URL to the full article", "t": "`$STRING`", "key$": "url", "index$": 6 }, "videoUrl": { "a": true, "fo": "uri", "h": "Video Url", "n": "videoUrl", "r": false, "sh": "URL to video content if available", "t": "`$STRING`", "key$": "videoUrl", "index$": 7 } }, "id": { "field": "id", "name": "id" }, "name": "new", "op": { "list": { "input": "data", "name": "list", "points": [{ "a": true, "co": { "id": "GET /breaking-news.json", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/breaking-news.json", "q": {}, "r": {}, "s": [{ "lit": "breaking-news.json" }], "t": { "req": "`reqdata`", "res": "`body.articles`" }, "index$": 0 }], "key$": "list" } }, "relations": { "ancestors": [] }, "key$": "new", "name__orig": "new", "Name": "New", "name_": "new", "name-": "new", "NAME": "NEW", "index$": 0 }, { "active": true, "entity": "new", "key$": "BasicNewFlow", "kind": "basic", "name": "BasicNewFlow", "param": {}, "step": [{ "a": true, "d": {}, "i": {}, "m": {}, "o": "list", "s": [], "v": [{ "apply": "ItemExists", "def": { "ref": "new_ref01" } }], "index$": 0 }] }, 'New', { "GET /breaking-news.json": { "protocol": "http", "parameters": [] } });
+            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": { "category": { "a": true, "h": "Category", "n": "category", "r": false, "sh": "Category of the news (e.g., economy, politics, diplomacy)", "t": "`$STRING`", "key$": "category", "index$": 0 }, "description": { "a": true, "h": "Description", "n": "description", "r": false, "sh": "Brief description or summary of the article", "t": "`$STRING`", "key$": "description", "index$": 1 }, "id": { "a": true, "h": "Id", "n": "id", "r": false, "sh": "Unique identifier for the news article", "t": "`$STRING`", "key$": "id", "index$": 2 }, "publishedAt": { "a": true, "fo": "date-time", "h": "Published At", "n": "publishedAt", "r": false, "sh": "Publication date and time", "t": "`$STRING`", "key$": "publishedAt", "index$": 3 }, "thumbnail": { "a": true, "fo": "uri", "h": "Thumbnail", "n": "thumbnail", "r": false, "sh": "Thumbnail image URL", "t": "`$STRING`", "key$": "thumbnail", "index$": 4 }, "title": { "a": true, "h": "Title", "n": "title", "r": false, "sh": "Title of the news article", "t": "`$STRING`", "key$": "title", "index$": 5 }, "url": { "a": true, "fo": "uri", "h": "Url", "n": "url", "r": false, "sh": "URL to the full article", "t": "`$STRING`", "key$": "url", "index$": 6 }, "videoUrl": { "a": true, "fo": "uri", "h": "Video Url", "n": "videoUrl", "r": false, "sh": "URL to video content if available", "t": "`$STRING`", "key$": "videoUrl", "index$": 7 } }, "id": { "field": "id", "name": "id" }, "name": "new", "op": { "list": { "input": "data", "name": "list", "points": [{ "a": true, "co": { "id": "GET /breaking-news.json", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/breaking-news.json", "q": {}, "r": {}, "rs": { "kind": "json", "media": "application/json" }, "s": [{ "lit": "breaking-news.json" }], "t": { "req": "`reqdata`", "res": "`body.articles`" }, "index$": 0 }], "key$": "list" } }, "relations": { "ancestors": [] }, "key$": "new", "name__orig": "new", "Name": "New", "name_": "new", "name-": "new", "NAME": "NEW", "index$": 0 }, { "active": true, "entity": "new", "key$": "BasicNewFlow", "kind": "basic", "name": "BasicNewFlow", "param": {}, "step": [{ "a": true, "d": {}, "i": {}, "m": {}, "o": "list", "s": [], "v": [{ "apply": "ItemExists", "def": { "ref": "new_ref01" } }], "index$": 0 }] }, 'New', { "GET /breaking-news.json": { "protocol": "http", "parameters": [] } }, { strict: LIVE_STRICT, t });
         }
         const client = setup.client;
         const struct = setup.struct;
@@ -75,6 +122,11 @@ const utility_1 = require("../../utility");
         const new_ref01_list = (await new_ref01_ent.list(new_ref01_match)).map((e) => e.data());
     });
 });
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true;
 function basicSetup(extra) {
     // TODO: fix test def options
     const options = {}; // null

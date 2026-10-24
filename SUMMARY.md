@@ -1,6 +1,6 @@
 # Euronews API
 
-This API provides access to the latest breaking news from ru.euronews.com, allowing users to stay informed about European and world news across various topics including economy, politics, and diplomacy. It offers content in the form of free video on demand.
+This API provides access to the latest breaking news from `ru.euronews.com`, allowing users to stay informed about European and world news across various topics including economy, politics, and diplomacy. It offers content in the form of free video on demand.
 
 ## Start here
 

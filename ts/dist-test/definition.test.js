@@ -17,20 +17,25 @@ const PLAN = [
         "args": [],
         "select": {},
         "headers": [],
+        "cookies": [],
+        "responseMedia": [
+            "application/json"
+        ],
         "query": [],
+        "queryArgs": [],
         "auth": null,
         "status": 200,
         "sample": {
             "articles": [
                 {
-                    "category": "x",
-                    "description": "x",
                     "id": "x",
-                    "publishedAt": "2026-01-01T00:00:00Z",
-                    "thumbnail": "x",
                     "title": "x",
+                    "description": "x",
                     "url": "x",
-                    "videoUrl": "x"
+                    "publishedAt": "2026-01-01T00:00:00Z",
+                    "category": "x",
+                    "videoUrl": "x",
+                    "thumbnail": "x"
                 }
             ]
         },

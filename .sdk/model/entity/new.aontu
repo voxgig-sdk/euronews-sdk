@@ -85,6 +85,10 @@ main: kit: entity: new: {
           }
           m: "GET"
           o: "/breaking-news.json"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "breaking-news.json"
